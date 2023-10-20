@@ -12,6 +12,9 @@ export default function TextForm() {
     let lowerText = textValue.toLowerCase();
     newValue(lowerText);
   };
+  const clearText = () => {
+    newValue("");
+  };
   const [textValue, newValue] = useState("");
   return (
     <>
@@ -26,11 +29,23 @@ export default function TextForm() {
               value={textValue}
               onChange={onchangevalue}
             ></textarea>
-            <button className="btn btn-primary my-2" onClick={toUpperClick}>
-              Make Uppercase
+            <button
+              className="btn btn-outline-secondary btn-light my-2"
+              onClick={toUpperClick}
+            >
+              Uppercase
             </button>
-            <button className="btn btn-primary m-2" onClick={toLowerClick}>
-              Make LowerCase
+            <button
+              className="btn btn-outline-secondary btn-light m-2"
+              onClick={toLowerClick}
+            >
+              LowerCase
+            </button>
+            <button
+              className="btn btn-outline-secondary btn-light m-2"
+              onClick={clearText}
+            >
+              Clear Text
             </button>
           </div>
         </div>

@@ -2,6 +2,7 @@ import "./App.css";
 import NavBar from "./Components/NavBar";
 import TextForm from "./Components/TextForm";
 import LogIN from "./Components/LogIN";
+import About from "./Components/About";
 
 function App() {
   return (
@@ -10,8 +11,9 @@ function App() {
         brandName="TexTor"
         itemOne="Home"
         itemTwo="About"
-        itemThree="Blog"
-      />
+        itemThree="Join Us"
+        />
+        <About/>
         <LogIN />
       <TextForm />
     </>

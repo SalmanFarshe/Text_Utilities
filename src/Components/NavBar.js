@@ -1,7 +1,7 @@
 import React from "react";
 export default function NavBar(props) {
   return (
-    <nav className="navbar navbar-expand-lg">
+    <nav className="navbar navbar-expand-lg bg-body-tertiary">
       <div className="container">
         <a className="navbar-brand text-info" href="\">
           <b>{props.brandName}</b>

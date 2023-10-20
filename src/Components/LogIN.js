@@ -11,7 +11,7 @@ export default function LogIN() {
     background: "#445760",
   };
   let SubmitButtonColorTheme = {
-    border:"none",
+    border: "none",
     color: "white",
     background: "#445760",
   };
@@ -36,7 +36,6 @@ export default function LogIN() {
         color: "black",
         background: "white",
       });
-      
     } else {
       setColorMode({
         background: "",
