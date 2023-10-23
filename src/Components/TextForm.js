@@ -56,7 +56,7 @@ export default function TextForm() {
             charecters
           </p>
           <p>Read Time : {textValue.split("").length * 0.008} Minutes</p>
-          <h3>Preview</h3>
+          <h3>{textValue == "" ? "Enter you Text to Preview Here" : "Preview"}</h3>
           <p>{textValue}</p>
         </div>
       </div>
