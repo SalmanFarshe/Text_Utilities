@@ -1,7 +1,7 @@
 import React from "react";
 export default function NavBar(props) {
   return (
-    <nav className="navbar navbar-expand-lg bg-body-tertiary">
+    <nav className={`navbar navbar-expand-lg bg-${props.themecolor}`}>
       <div className="container">
         <a className="navbar-brand text-info" href="\">
           <b>{props.brandName}</b>
@@ -28,6 +28,15 @@ export default function NavBar(props) {
               </a>
             </li>
           </ul>
+          <div className="form-check form-switch">
+            <input
+              className="form-check-input"
+              type="checkbox"
+              role="switch"
+              id="flexSwitchCheckChecked"
+              onClick={props.themeFunc}
+            />
+          </div>
         </div>
       </div>
     </nav>
