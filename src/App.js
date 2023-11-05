@@ -1,10 +1,13 @@
 import { useState } from "react";
+import { BrowserRouter as Router, Route, Link, Routes } from "react-router-dom";
 import "./App.css";
 import About from "./Components/About";
 import Alert from "./Components/Alert";
 import LogIN from "./Components/LogIN";
 import NavBar from "./Components/NavBar";
 import TextForm from "./Components/TextForm";
+import TextTorHome from "./Components/TextTorHome";
+import AboutDetails from "./Components/AboutDetails";
 
 let bg = "#0D1117";
 
@@ -43,18 +46,18 @@ function App() {
     document.title = "Text Utiles - Solid Gold mode";
   };
   document.body.style.backgroundColor = bg;
-  
+
   const [alertt, setalert] = useState(null);
   const aletmsg = (msg) => {
     setalert({
-      msg: msg
-    })
+      msg: msg,
+    });
     setTimeout(() => {
-      setalert(null)
+      setalert(null);
     }, 1500);
-  }
+  };
   return (
-    <>
+    <Router>
       <NavBar
         brandName="TexTor"
         itemOne="Home"
@@ -69,13 +72,25 @@ function App() {
         themeColorBackground={defaultBackgroundColorTheme}
       />
       <Alert alertt={alertt} />
-      <TextForm
-        alertmdg={aletmsg}
-        themeColorBackground={defaultBackgroundColorTheme}
-      />
-      <LogIN themeColorBackground={defaultBackgroundColorTheme} />
-      <About />
-    </>
+      <Routes>
+        <Route
+          path="/home"
+          element={
+            <TextForm
+              alertmdg={aletmsg}
+              themeColorBackground={defaultBackgroundColorTheme}
+            />
+          }
+        />
+        <Route
+          path="/Signin"
+          element={<LogIN themeColorBackground={defaultBackgroundColorTheme} />}
+        />
+        <Route path="/about" element={<About />} />
+        <Route path="/textor" element={<TextTorHome />} />
+        <Route path="/details" element={<AboutDetails />} />
+      </Routes>
+    </Router>
   );
 }
 
