@@ -7,7 +7,7 @@ export default function TextForm(props) {
   const toUpperClick = () => {
     let upperText = textValue.toUpperCase();
     newValue(upperText);
-    props.alertmdg("Text Converted Uppercase Successfully!")
+    props.alertmdg("Text Converted Uppercase Successfully!");
   };
   const toLowerClick = () => {
     let lowerText = textValue.toLowerCase();
@@ -16,7 +16,7 @@ export default function TextForm(props) {
   };
   const clearText = () => {
     newValue("");
-    props.alertmdg("Text Cleared Successfully!")
+    props.alertmdg("Text Cleared Successfully!");
   };
   const [textValue, newValue] = useState("");
   return (
@@ -58,8 +58,9 @@ export default function TextForm(props) {
             {textValue.split(" ").length} Words and {textValue.length}{" "}
             charecters
           </p>
-          <p>Read Time : {textValue.split("").length * 0.008} Minutes</p>
-          <h3>{textValue == "" ? "Enter you Text to Preview Here" : "Preview"}</h3>
+          <h3>
+            {textValue === "" ? "Enter you Text to Preview Here" : "Preview"}
+          </h3>
           <p>{textValue}</p>
         </div>
       </div>
